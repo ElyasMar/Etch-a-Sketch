@@ -1,0 +1,180 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: "Winky Rough", sans-serif;
+  font-weight: normal;
+  font-family: "Cabin Sketch", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding-top: 150px;
+  background: rgb(241, 218, 188);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background: rgb(241, 218, 188);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+#paint-area {
+    display: flex;
+    flex-wrap: wrap;
+    width: 650px;
+    height: 650px;
+    border: 2px solid black;
+    background: white;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+}
+
+.grid-item {
+    box-sizing: border-box;
+    border: 1px solid black;
+    cursor: crosshair;
+}
+
+#art-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#left-palette-1,
+#left-palette-2,
+#right-palette-1,
+#right-palette-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.color-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+#btn {
+    width: 150px;
+    height: 50px;
+    font-size: x-large;
+    background-color: rgb(204, 137, 148);
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+#btn:hover {
+    background-color: rgb(184, 86, 102);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: all 0.1s ease-in-out;
+}
+
+.blur {
+  filter: blur(1px);
+}
+
+#grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(241, 218, 188, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 5px solid rgb(184, 86, 102);
+  gap: 15px;
+  z-index: 1000;
+}
+
+#grid-overlay button {
+   width: 150px;
+   height: 50px;
+   font-size: x-large;
+   background-color: rgb(204, 137, 148);
+   border-radius: 10px;
+   cursor: pointer;
+   border: none;
+}
+
+#grid-overlay button:hover {
+    background-color: rgb(184, 86, 102);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.1s ease-in-out;
+}
+
+#grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(241, 218, 188, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+#grid-overlay .overlay-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  border: 5px solid rgb(184, 86, 102);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(241, 218, 188, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+#grid-overlay .overlay-box {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 30px;
+  border: 5px solid rgb(184, 103, 116);
+  border-radius: 15px;
+  background-color: rgba(241, 218, 188, 0.95);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
