@@ -41,7 +41,6 @@ header h1 {
     background: white;
     margin-left: 3rem;
     margin-right: 3rem;
-    margin-bottom: 3rem;
 }
 
 
@@ -85,6 +84,7 @@ header h1 {
     border-radius: 10px;
     cursor: pointer;
     border: none;
+    margin-top: 3rem;
 }
 
 #btn:hover {
