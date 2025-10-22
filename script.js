@@ -163,6 +163,13 @@ newSketchButton.addEventListener("click", () =>{
     overlayBox.className = "overlay-box";
     overlay.appendChild(overlayBox);
 
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            overlay.remove();
+            artContainer.classList.remove("blur");
+        }
+    });
+
     //creating the choice grid size buttons
     const sizes = [16, 32, 64];
     sizes.forEach((size) => {
