@@ -178,7 +178,7 @@ newSketchButton.addEventListener("click", () =>{
             // create the new grid
             dynamicGrid(size);
         })
-        overlay.appendChild(btn);
+        overlayBox.appendChild(btn);
     })
     document.body.appendChild(overlay);
 });
