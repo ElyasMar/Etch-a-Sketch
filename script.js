@@ -113,13 +113,82 @@ LHColorPalette2.appendChild(colorNeon)
 // combining the color buttons
 const buttons = document.querySelectorAll(".color-btn");
 
-let selectedColor = null;
+let selectedColor = "black";
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        let selectedColor = window.getComputedStyle(button).getPropertyValue("background-color");
+        selectedColor = window.getComputedStyle(button).getPropertyValue("background-color");
         console.log(selectedColor);
     })
 })
 
 
+// creating the grid dynamically
+function dynamicGrid(gridSize) {
+
+    // clear the grid container
+    paintArea.textContent = "";
+
+    let cellSize = paintArea.clientWidth / gridSize;
+
+   for (let i = 0; i < (gridSize * gridSize); i++){
+    let cell = document.createElement("div");
+    cell.className = "grid-item";
+    cell.style.width = `${cellSize}px`;
+    cell.style.height = `${cellSize}px`;
+    paintArea.appendChild(cell);
+   } 
+   enableDrawing();
+}
+
+dynamicGrid(16);
+
+
+// new sketch button
+newSketchButton.addEventListener("click", () =>{
+
+    // creating the blur class for the effect
+    artContainer.classList.add("blur");
+
+    // creating the div that would sit on the page
+    const overlay = document.createElement("div");
+    overlay.id = "grid-overlay";
+
+    //creating the choice grid size buttons
+    const sizes = [16, 32, 64];
+    sizes.forEach((size) => {
+        const btn = document.createElement("button");
+        btn.textContent = `${size} x ${size}`;
+        btn.addEventListener("click", () => {
+            // removing the overlay and the blured background
+            overlay.remove();
+            artContainer.classList.remove("blur");
+
+            // create the new grid
+            dynamicGrid(size);
+        })
+        overlay.appendChild(btn);
+    })
+    document.body.appendChild(overlay);
+});
+
+
+// a function that enables drawing on the grid
+function enableDrawing() {
+    let isDrawing = false;
+    paintArea.addEventListener("mousedown", () => isDrawing = true);
+    paintArea.addEventListener("mouseup", () => isDrawing = false);
+
+    const cells = document.querySelectorAll(".grid-item");
+
+    cells.forEach((cell) => {
+        cell.addEventListener("mouseover", () => {
+            if (isDrawing) {
+                cell.style.backgroundColor = selectedColor;
+            }
+        })
+        cell.addEventListener("mousedown", () =>{
+            cell.style.backgroundColor = selectedColor;
+        }) 
+    })
+}
