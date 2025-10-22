@@ -136,13 +136,11 @@ function dynamicGrid(gridSize) {
     // clear the grid container
     paintArea.textContent = "";
 
-    let cellSize = paintArea.clientWidth / gridSize;
+    paintArea.setAttribute('data-grid-size', gridSize)
 
    for (let i = 0; i < (gridSize * gridSize); i++){
     let cell = document.createElement("div");
     cell.className = "grid-item";
-    cell.style.width = `${cellSize}px`;
-    cell.style.height = `${cellSize}px`;
     paintArea.appendChild(cell);
    } 
    enableDrawing();
