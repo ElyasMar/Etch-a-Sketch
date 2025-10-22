@@ -48,6 +48,7 @@ header h1 {
     box-sizing: border-box;
     border: 1px solid black;
     cursor: crosshair;
+    flex: 0 0 auto;
 }
 
 #art-container {
@@ -72,6 +73,7 @@ header h1 {
     width: 70px;
     height: 70px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 #btn {
