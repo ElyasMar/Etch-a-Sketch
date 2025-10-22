@@ -120,7 +120,7 @@ LHColorPalette2.appendChild(colorNeon)
 // combining the color buttons
 const buttons = document.querySelectorAll(".color-btn");
 
-let selectedColor = "black";
+let selectedColor = null;
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -178,7 +178,7 @@ newSketchButton.addEventListener("click", () =>{
             // create the new grid
             dynamicGrid(size);
         })
-        overlayBox.appendChild(btn);
+        overlay.appendChild(btn);
     })
     document.body.appendChild(overlay);
 });
