@@ -161,6 +161,10 @@ newSketchButton.addEventListener("click", () =>{
     const overlay = document.createElement("div");
     overlay.id = "grid-overlay";
 
+    const overlayBox = document.createElement("div");
+    overlayBox.className = "overlay-box";
+    overlay.appendChild(overlayBox);
+
     //creating the choice grid size buttons
     const sizes = [16, 32, 64];
     sizes.forEach((size) => {
