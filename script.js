@@ -19,14 +19,21 @@ const newSketchButton = document.createElement("button");
 newSketchButton.textContent = "New Sketch";
 
 // div layout
-artContainer.appendChild(title);
-artContainer.appendChild(RHColorPalette1);
-artContainer.appendChild(RHColorPalette2);
-artContainer.appendChild(paintArea);
+// create a header and append the title
+const header = document.createElement("header");
+header.appendChild(title);
+
+// appending elements to the body in order
+document.body.appendChild(header);
+document.body.appendChild(artContainer);
+document.body.appendChild(newSketchButton);
+
+// appending children to artContainer
 artContainer.appendChild(LHColorPalette1);
 artContainer.appendChild(LHColorPalette2);
-// appending the button to the body
-document.body.appendChild(newSketchButton);
+artContainer.appendChild(paintArea);
+artContainer.appendChild(RHColorPalette1);
+artContainer.appendChild(RHColorPalette2);
 
 // giving the new elements some ids
 RHColorPalette1.id = "right-palette-1";
